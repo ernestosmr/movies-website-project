@@ -1,0 +1,19 @@
+{
+  "name": "movies-website-project",
+  "version": "1.0.0",
+  "description": "API REST Practice Course with JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ernestosmr/movies-website-project.git"
+  },
+  "author": "@safoi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ernestosmr/movies-website-project/issues"
+  },
+  "homepage": "https://github.com/ernestosmr/movies-website-project#readme"
+}
