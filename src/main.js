@@ -1,7 +1,7 @@
 async function getTredingMoviesPreview(){
     const  { data } = await API('trending/movie/day');
     const movies = data.results;
-    const trendingPreviewMoviesContainer = document.querySelector('#trendingPreview .trendingPreview-movieList')
+    trendingMoviesPreviewList.innerHTML = ''
 
     movies.forEach(movie => {
 
@@ -13,13 +13,13 @@ async function getTredingMoviesPreview(){
         movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path);
 
         movieContainer.appendChild(movieImg);
-        trendingPreviewMoviesContainer.appendChild(movieContainer);
+        trendingMoviesPreviewList.appendChild(movieContainer);
     });
 };
 async function getCategoriesPreview(){
     const  { data } = await API('/genre/movie/list');
     const categories = data.genres;
-    const previewCategoryContainer = document.querySelector('#categoriesPreview .categoriesPreview-list')
+    categoriesPreviewList.innerHTML = ''
 
     categories.forEach(category => {
 
@@ -31,6 +31,6 @@ async function getCategoriesPreview(){
         categoryTitle.innerText = category.name;
 
         categoryContainer.appendChild(categoryTitle);
-        previewCategoryContainer.appendChild(categoryContainer);
+        categoriesPreviewList.appendChild(categoryContainer);
     });
 };
