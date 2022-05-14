@@ -1,11 +1,13 @@
+
 searchFormBtn.addEventListener("click", () => {
-  location.hash = '#search='
+  location.hash = '#search=' + searchFormInput.value;
 })
 trendingBtn.addEventListener("click", () => {
   location.hash = '#trends'
 })
 arrowBtn.addEventListener("click", () => {
-  location.hash = '#home'
+  history.back()
+    // location.hash = '#home'
 })
 
 window.addEventListener('DOMContentLoaded', navigator, false);
@@ -98,7 +100,7 @@ function searchPage() {
     arrowBtn.classList.remove('inactive');
     arrowBtn.classList.remove('header-arrow--white');
     headerTitle.classList.add('inactive');
-    headerCategoryTitle.classList.remove('inactive');
+    headerCategoryTitle.classList.add('inactive');
     searchForm.classList.remove('inactive');
 
     trendingPreviewSection.classList.add('inactive');
@@ -106,6 +108,8 @@ function searchPage() {
     genericList.classList.remove('inactive');
     movieDetailSection.classList.add('inactive'); 
     
+    const [_, query] = location.hash.split('=')
+    getMoviesBySearch(query)
 }
 
 function trendsPage() {
@@ -125,4 +129,6 @@ function trendsPage() {
     genericList.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
     
+    headerCategoryTitle.textContent = 'Trends'
+    getTredingMovies()
 }
